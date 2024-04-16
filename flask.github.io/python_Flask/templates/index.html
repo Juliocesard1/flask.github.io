@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+
+    <h1 style="text-align: center;">Lista de Frutas</h1>
+    <hr>
+    {%  for fruta in frutas %}
+<ul class="list-gruop">
+
+
+        <li class="list-gruop-item">{{fruta}}</li>
+
+    {% endfor %}
+    <form action="{{url_for('principal')}}" method="post">
+        <div class="form-group">
+            <label for="examplofrutas">frutas</label>
+            <input class="form-control" type="text" id="exemplofruta" name="fruta" placeholder="digite o nome da fruta">
+            <button type="submit" class="btn btn-primary">enviar</button> 
+
+        </div>
+    </form>
+</ul>
+
+{% endblock conteudo %}

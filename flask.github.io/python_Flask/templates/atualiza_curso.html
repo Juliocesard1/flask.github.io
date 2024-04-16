@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h1 style="text-align: center;">Atualizar  Curso</h1>
+<hr>
+
+<form action="{{url_for('atualiza_curso',id=curso.id)}}" method="post" class="form-control">
+    <label>Nome</label>
+    <input class="form-control" type="text" name="nome" value="{{curso.nome}}"  required>
+    <br>
+    <label>Descrição</label>
+    <textarea class="form-control" name="descricao" required>{{curso.descricao}}</textarea>
+    <br>
+    <label>CH</label>
+    <input class="form-control" type="number" name="ch" value="{{curso.ch}}" required>
+    <br>
+    <input class="btn btn-dark" type="submit" value="Salvar">
+</form>
+{% endblock conteudo %}
